@@ -1,0 +1,112 @@
+{
+  "title": "Booking resource",
+  "description": "Booking resource object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Booking id",
+      "type": "integer"
+    },
+    "first_name": {
+      "description": "First name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "last_name": {
+      "description": "Last name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "the date of birth"
+    }, 
+    
+    "checkin": {
+    "description": "check in date and time",
+      "type": "string",
+      "format": "date-time"
+    }, 
+    
+    "checkout": {
+    "description": "checkout date and time",
+      "type": "string",
+      "format": "date-time"
+    }, 
+    
+    "totalprice": {
+    "description": "total price for booking",
+     "type": "number"
+    } , 
+    
+    "deposit": {
+    "description": "total price for booking",
+     "type": "number"
+    },
+   
+    "address": {
+        "type": "object",
+        "title": "The address schema",
+        "description": "Address for the booking resource.",
+        
+        "properties": {
+            "line1": {
+                "type": "string",
+                "description": "line 1 for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            },
+            "line2": {
+                "type": "string",
+                "description": "line 2 for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            },
+            "city": {
+                "type": "string",
+                "description": "city for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            },
+            "state": {
+                "type": "state",
+                "description": "state for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            },
+            "country": {
+                "type": "string",
+                "description": "country for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            },
+            "zip_code": {
+                "type": "string",
+                "description": "zip code for address.",
+                "minLength": 1,
+      			"maxLength": 255
+            }
+        },
+        "required": [
+            "line1",
+             "city",
+             "state", 
+             "country", 
+             "zip_code"
+        ]
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name", 
+    "date_of_birth",
+    "checkin",
+    "checkout",
+    "totalprice",
+    "deposit",
+    "address"
+  ]
+}
